@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Germa Travel | Luxury Caribbean Experiences</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Luxury travel agency in Dominican Republic offering Punta Cana resorts, VIP tourism services, excursions, yachts, helicopters and unforgettable Caribbean vacations."/>
+  <meta name="keywords" content="Punta Cana Resorts, Dominican Republic Excursions, Luxury Caribbean Vacations, VIP Tourism Services, Travel Agency Dominican Republic"/>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    :root{
+      --gold:#d4af37;
+      --turquoise:#00d2d3;
+      --navy:#07131f;
+      --white:#fff;
+      --glass:rgba(255,255,255,0.12);
+      --gradient:linear-gradient(135deg,#00c9c8,#0b1e35,#ff9966);
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#02101c;
+      color:#fff;
+      overflow-x:hidden;
+    }
+
+    h1,h2,h3,h4{
+      font-family:'Playfair Display',serif;
+    }
+
+    section{
+      padding:100px 7%;
+      position:relative;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:3rem;
+      margin-bottom:10px;
+      color:var(--gold);
+    }
+
+    .section-title p{
+      color:#ccc;
+      max-width:700px;
+      margin:auto;
+    }
+
+    /* NAVBAR */
+    header{
+      position:fixed;
+      top:0;
+      width:100%;
+      z-index:999;
+      backdrop-filter:blur(10px);
+      background:rgba(0,0,0,0.35);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 7%;
+    }
+
+    .logo{
+      font-size:2rem;
+      color:#fff;
+      font-weight:700;
+    }
+
+    .logo span{
+      color:var(--gold);
+    }
+
+    .nav-links{
+      display:flex;
+      gap:25px;
+      list-style:none;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:#fff;
+      transition:.3s;
+      font-size:.95rem;
+    }
+
+    .nav-links a:hover{
+      color:var(--turquoise);
+    }
+
+    .menu-toggle{
+      display:none;
+      font-size:1.8rem;
+      cursor:pointer;
+    }
+
+    /* HERO */
+    .hero{
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero video{
+      position:absolute;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      z-index:-2;
+    }
+
+    .hero::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(2,16,28,0.95));
+      z-index:-1;
+    }
+
+    .hero-content{
+      text-align:center;
+      max-width:900px;
+      animation:fadeUp 1.2s ease;
+    }
+
+    .hero-content h1{
+      font-size:4.5rem;
+      line-height:1.1;
+      margin-bottom:20px;
+    }
+
+    .hero-content h1 span{
+      color:var(--gold);
+    }
+
+    .hero-content p{
+      font-size:1.2rem;
+      color:#eee;
+      margin-bottom:35px;
+    }
+
+    .btn-group{
+      display:flex;
+      gap:20px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:15px 32px;
+      border:none;
+      border-radius:50px;
+      cursor:pointer;
+      text-decoration:none;
+      font-weight:600;
+      transition:.4s;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .btn-primary{
+      background:var(--gold);
+      color:#111;
+    }
+
+    .btn-secondary{
+      background:transparent;
+      border:2px solid #fff;
+      color:#fff;
+    }
+
+    .btn:hover{
+      transform:translateY(-5px) scale(1.03);
+      box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    /* GLASS */
+    .glass{
+      background:var(--glass);
+      border:1px solid rgba(255,255,255,0.12);
+      backdrop-filter:blur(14px);
+      border-radius:25px;
+    }
+
+    /* SERVICES */
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .service-card{
+      padding:35px 25px;
+      transition:.4s;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .service-card:hover{
+      transform:translateY(-10px);
+      background:rgba(255,255,255,0.18);
+    }
+
+    .service-card i{
+      font-size:2.5rem;
+      color:var(--gold);
+      margin-bottom:20px;
+    }
+
+    .service-card h3{
+      margin-bottom:15px;
+    }
+
+    .service-card p{
+      color:#ddd;
+      font-size:.95rem;
+    }
+
+    /* COUNTERS */
+    .counter-section{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+    }
+
+    .counter-box{
+      text-align:center;
+      padding:40px 20px;
+    }
+
+    .counter{
+      font-size:3rem;
+      color:var(--gold);
+      font-weight:bold;
+    }
+
+    /* ABOUT */
+    .about{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:50px;
+      align-items:center;
+    }
+
+    .about img{
+      width:100%;
+      border-radius:25px;
+      object-fit:cover;
+      height:500px;
+    }
+
+    .about-content h2{
+      font-size:3rem;
+      color:var(--gold);
+      margin-bottom:20px;
+    }
+
+    .about-content p{
+      line-height:1.8;
+      color:#ddd;
+    }
+
+    /* OFFERS */
+    .offers-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+
+    .offer-card{
+      position:relative;
+      overflow:hidden;
+      border-radius:25px;
+      height:420px;
+      transition:.4s;
+    }
+
+    .offer-card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:1s;
+    }
+
+    .offer-card:hover img{
+      transform:scale(1.1);
+    }
+
+    .offer-overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top,rgba(0,0,0,0.9),rgba(0,0,0,0.15));
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      padding:25px;
+    }
+
+    .badge{
+      position:absolute;
+      top:15px;
+      left:15px;
+      background:#ff3b3b;
+      padding:8px 16px;
+      border-radius:30px;
+      font-size:.8rem;
+      font-weight:bold;
+    }
+
+    .timer{
+      margin:15px 0;
+      color:var(--turquoise);
+      font-size:.9rem;
+    }
+
+    /* DESTINATIONS */
+    .destinations-slider{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+    }
+
+    .destination{
+      position:relative;
+      border-radius:20px;
+      overflow:hidden;
+      height:320px;
+      transition:.4s;
+    }
+
+    .destination img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .destination::after{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top,rgba(0,0,0,0.85),transparent);
+    }
+
+    .destination h3{
+      position:absolute;
+      bottom:20px;
+      left:20px;
+      z-index:2;
+    }
+
+    .destination:hover{
+      transform:scale(1.03);
+    }
+
+    /* GALLERY */
+    .filters{
+      text-align:center;
+      margin-bottom:40px;
+    }
+
+    .filters button{
+      margin:8px;
+      padding:10px 20px;
+      border:none;
+      border-radius:30px;
+      background:var(--glass);
+      color:#fff;
+      cursor:pointer;
+      transition:.3s;
+    }
+
+    .filters button:hover{
+      background:var(--gold);
+      color:#111;
+    }
+
+    .gallery{
+      columns:3 250px;
+      gap:15px;
+    }
+
+    .gallery-item{
+      position:relative;
+      margin-bottom:15px;
+      overflow:hidden;
+      border-radius:20px;
+      cursor:pointer;
+    }
+
+    .gallery-item img{
+      width:100%;
+      transition:.5s;
+    }
+
+    .gallery-item:hover img{
+      transform:scale(1.08);
+    }
+
+    /* TESTIMONIALS */
+    .testimonial-slider{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:25px;
+    }
+
+    .testimonial{
+      padding:30px;
+    }
+
+    .testimonial img{
+      width:70px;
+      height:70px;
+      border-radius:50%;
+      object-fit:cover;
+      margin-bottom:15px;
+    }
+
+    .stars{
+      color:gold;
+      margin:10px 0;
+    }
+
+    /* COMMENTS */
+    .comment-form{
+      display:grid;
+      gap:15px;
+      margin-bottom:30px;
+    }
+
+    input,textarea,select{
+      width:100%;
+      padding:14px;
+      border:none;
+      border-radius:12px;
+      background:rgba(255,255,255,0.08);
+      color:#fff;
+    }
+
+    textarea{
+      min-height:120px;
+    }
+
+    .comments-list{
+      display:grid;
+      gap:20px;
+    }
+
+    .comment{
+      padding:20px;
+    }
+
+    /* INTERNATIONAL */
+    .packages-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:25px;
+    }
+
+    .package-card{
+      overflow:hidden;
+      border-radius:20px;
+      transition:.4s;
+    }
+
+    .package-card img{
+      width:100%;
+      height:250px;
+      object-fit:cover;
+    }
+
+    .package-content{
+      padding:20px;
+    }
+
+    .package-card:hover{
+      transform:translateY(-10px);
+    }
+
+    /* BOOKING */
+    .booking-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:40px;
+      align-items:center;
+    }
+
+    .booking-form{
+      padding:35px;
+    }
+
+    .booking-form form{
+      display:grid;
+      gap:15px;
+    }
+
+    /* NEWSLETTER */
+    .newsletter{
+      text-align:center;
+      background:var(--gradient);
+      border-radius:30px;
+      padding:60px 20px;
+    }
+
+    .newsletter form{
+      display:flex;
+      max-width:600px;
+      margin:25px auto 0;
+      overflow:hidden;
+      border-radius:50px;
+    }
+
+    .newsletter input{
+      border-radius:0;
+      flex:1;
+      background:#fff;
+      color:#111;
+    }
+
+    .newsletter button{
+      padding:0 30px;
+      border:none;
+      background:#111;
+      color:#fff;
+      cursor:pointer;
+    }
+
+    /* FOOTER */
+    footer{
+      padding:50px 7%;
+      background:#010912;
+      text-align:center;
+    }
+
+    .socials{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      margin:25px 0;
+    }
+
+    .socials a{
+      width:50px;
+      height:50px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(255,255,255,0.08);
+      color:#fff;
+      text-decoration:none;
+      transition:.3s;
+    }
+
+    .socials a:hover{
+      background:var(--gold);
+      color:#111;
+      transform:translateY(-5px);
+    }
+
+    /* FLOATING BUTTONS */
+    .whatsapp{
+      position:fixed;
+      right:25px;
+      bottom:25px;
+      width:65px;
+      height:65px;
+      border-radius:50%;
+      background:#25d366;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-size:2rem;
+      z-index:999;
+      text-decoration:none;
+      box-shadow:0 10px 25px rgba(0,0,0,0.4);
+      animation:pulse 2s infinite;
+    }
+
+    .top-btn{
+      position:fixed;
+      bottom:100px;
+      right:25px;
+      width:50px;
+      height:50px;
+      background:var(--gold);
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#111;
+      text-decoration:none;
+      z-index:999;
+    }
+
+    /* WAVES */
+    .wave{
+      position:absolute;
+      bottom:0;
+      left:0;
+      width:100%;
+      opacity:.5;
+    }
+
+    /* LIGHTBOX */
+    .lightbox{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.9);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:2000;
+    }
+
+    .lightbox img{
+      max-width:90%;
+      max-height:90%;
+      border-radius:20px;
+    }
+
+    /* PARTICLES */
+    .particle{
+      position:absolute;
+      width:6px;
+      height:6px;
+      background:rgba(255,255,255,0.6);
+      border-radius:50%;
+      animation:float 10s linear infinite;
+    }
+
+    @keyframes float{
+      from{
+        transform:translateY(100vh);
+      }
+      to{
+        transform:translateY(-100vh);
+      }
+    }
+
+    @keyframes pulse{
+      0%{transform:scale(1);}
+      50%{transform:scale(1.08);}
+      100%{transform:scale(1);}
+    }
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(50px);
+      transition:1s;
+    }
+
+    .reveal.active{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    @media(max-width:900px){
+      .hero-content h1{
+        font-size:3rem;
+      }
+
+      .nav-links{
+        position:absolute;
+        top:80px;
+        right:-100%;
+        flex-direction:column;
+        width:280px;
+        background:#07131f;
+        padding:30px;
+        transition:.4s;
+      }
+
+      .nav-links.active{
+        right:0;
+      }
+
+      .menu-toggle{
+        display:block;
+      }
+    }
+
+    @media(max-width:600px){
+      .hero-content h1{
+        font-size:2.3rem;
+      }
+
+      .section-title h2{
+        font-size:2.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PARTICLES -->
+  <div id="particles"></div>
+
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <div class="logo">Germa <span>Travel</span></div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#offers">Offers</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#booking">Booking</a></li>
+      </ul>
+
+      <div class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+
+    <video autoplay muted loop playsinline>
+      <source src="https://cdn.coverr.co/videos/coverr-tropical-beach-resort-1564223932690?download=1080p" type="video/mp4">
+    </video>
+
+    <div class="hero-content">
+      <h1>Discover Paradise in the <span>Dominican Republic</span></h1>
+
+      <p>
+        Exclusive resorts, VIP experiences, luxury excursions and unforgettable adventures at the best prices.
+      </p>
+
+      <div class="btn-group">
+        <a href="#offers" class="btn btn-primary">View Limited Offers</a>
+
+        <a href="https://wa.me/18495182461?text=Hola%20estoy%20interesado%20en%20uno%20de%20tus%20paquetes%20de%20viaje%20puedo%20obtener%20mas%20informacion"
+           class="btn btn-secondary" target="_blank">
+          Contact Us on WhatsApp
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="reveal">
+    <div class="section-title">
+      <h2>Luxury VIP Services</h2>
+      <p>Premium tourism experiences designed for travelers who expect unforgettable moments.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card glass">
+        <i class="fas fa-car-side"></i>
+        <h3>VIP Transportation</h3>
+        <p>Luxury private transfers and executive transportation.</p>
+      </div>
+
+      <div class="service-card glass">
+        <i class="fas fa-water"></i>
+        <h3>Luxury Excursions</h3>
+        <p>Exclusive tours through paradise beaches and hidden gems.</p>
+      </div>
+
+      <div class="service-card glass">
+        <i class="fas fa-utensils"></i>
+        <h3>Restaurant Reservations</h3>
+        <p>Book elite restaurants and premium dining experiences.</p>
+      </div>
+
+      <div class="service-card glass">
+        <i class="fas fa-ship"></i>
+        <h3>Yacht Rentals</h3>
+        <p>Luxury yacht experiences with Caribbean ocean views.</p>
+      </div>
+
+      <div class="service-card glass">
+        <i class="fas fa-route"></i>
+        <h3>Local Trips</h3>
+        <p>Punta Cana ↔ Puerto Plata premium transportation services.</p>
+      </div>
+
+      <div class="service-card glass">
+        <i class="fas fa-helicopter"></i>
+        <h3>Helicopter Experience</h3>
+        <p>Fly above the Dominican coast with breathtaking aerial tours.</p>
+      </div>
+
+      <div class="service-card glass">
+        <i class="fas fa-jet-fighter"></i>
+        <h3>Jetscar Water Vehicles</h3>
+        <p>Adrenaline-filled luxury aquatic adventures.</p>
+      </div>
+
+      <div class="service-card glass">
+        <i class="fas fa-earth-americas"></i>
+        <h3>International Packages</h3>
+        <p>Exclusive vacations to world-class destinations.</p>
+      </div>
+
+      <div class="service-card glass">
+        <i class="fas fa-house"></i>
+        <h3>Luxury Villas</h3>
+        <p>Private villas with premium Caribbean comfort.</p>
+      </div>
+
+      <div class="service-card glass">
+        <i class="fas fa-hotel"></i>
+        <h3>Resort Reservations</h3>
+        <p>Top-rated all-inclusive luxury resort bookings.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COUNTERS -->
+  <section class="reveal">
+    <div class="counter-section">
+
+      <div class="counter-box glass">
+        <div class="counter" data-target="1500">0</div>
+        <h3>Luxury Travelers</h3>
+      </div>
+
+      <div class="counter-box glass">
+        <div class="counter" data-target="75">0</div>
+        <h3>VIP Resorts</h3>
+      </div>
+
+      <div class="counter-box glass">
+        <div class="counter" data-target="250">0</div>
+        <h3>Exclusive Excursions</h3>
+      </div>
+
+      <div class="counter-box glass">
+        <div class="counter" data-target="98">0</div>
+        <h3>% Satisfaction</h3>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="reveal">
+    <div class="about">
+
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop" alt="">
+
+      <div class="about-content">
+        <h2>Who We Are</h2>
+
+        <p>
+          Nos dedicamos a descubrir y compartir destinos, vivencias memorables y experiencias únicas,
+          desde complejos turísticos, resorts de lujo hasta hermosas villas y restaurantes formidables.
+          <br><br>
+          Somos tu guía de viajes y excursiones de primera clase para que puedas experimentar experiencias únicas.
+          Atrévete a pasar de tu sueño a la realidad.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- OFFERS -->
+  <section id="offers" class="reveal">
+    <div class="section-title">
+      <h2>Limited Time Offers</h2>
+      <p>Exclusive luxury escapes with special Caribbean pricing.</p>
+    </div>
+
+    <div class="offers-grid" id="offersGrid"></div>
+  </section>
+
+  <!-- DESTINATIONS -->
+  <section class="reveal">
+    <div class="section-title">
+      <h2>Top Dominican Destinations</h2>
+      <p>Discover the most breathtaking locations in the Caribbean.</p>
+    </div>
+
+    <div class="destinations-slider">
+
+      <div class="destination">
+        <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=1000&auto=format&fit=crop">
+        <h3>Punta Cana</h3>
+      </div>
+
+      <div class="destination">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1000&auto=format&fit=crop">
+        <h3>Las Terrenas</h3>
+      </div>
+
+      <div class="destination">
+        <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?q=80&w=1000&auto=format&fit=crop">
+        <h3>Puerto Plata</h3>
+      </div>
+
+      <div class="destination">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1000&auto=format&fit=crop">
+        <h3>Samaná</h3>
+      </div>
+
+      <div class="destination">
+        <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&w=1000&auto=format&fit=crop">
+        <h3>Saona Island</h3>
+      </div>
+
+      <div class="destination">
+        <img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?q=80&w=1000&auto=format&fit=crop">
+        <h3>Bayahibe</h3>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="reveal">
+
+    <div class="section-title">
+      <h2>Luxury Caribbean Gallery</h2>
+      <p>Inspired by tropical tourism, resorts, excursions and VIP Dominican experiences.</p>
+    </div>
+
+    <div class="filters">
+      <button>Resorts</button>
+      <button>Excursions</button>
+      <button>Beaches</button>
+      <button>VIP Experiences</button>
+      <button>Helicopter Tours</button>
+      <button>Yachts</button>
+    </div>
+
+    <div class="gallery">
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?q=80&w=1200&auto=format&fit=crop">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?q=80&w=1200&auto=format&fit=crop">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1200&auto=format&fit=crop">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?q=80&w=1200&auto=format&fit=crop">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=1200&auto=format&fit=crop">
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="reveal">
+
+    <div class="section-title">
+      <h2>Traveler Testimonials</h2>
+      <p>Luxury experiences shared by happy international travelers.</p>
+    </div>
+
+    <div class="testimonial-slider">
+
+      <div class="testimonial glass">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg">
+        <h3>Emily Carter</h3>
+        <div class="stars">★★★★★</div>
+        <p>“The most luxurious Caribbean experience we have ever had. Absolutely unforgettable.”</p>
+      </div>
+
+      <div class="testimonial glass">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg">
+        <h3>Michael Brown</h3>
+        <div class="stars">★★★★★</div>
+        <p>“VIP transportation and yacht service exceeded all expectations.”</p>
+      </div>
+
+      <div class="testimonial glass">
+        <img src="https://randomuser.me/api/portraits/women/65.jpg">
+        <h3>Sophia Lopez</h3>
+        <div class="stars">★★★★★</div>
+        <p>“Professional, trustworthy and truly premium service from start to finish.”</p>
+      </div>
+
+      <div class="testimonial glass">
+        <img src="https://randomuser.me/api/portraits/men/76.jpg">
+        <h3>Daniel White</h3>
+        <div class="stars">★★★★★</div>
+        <p>“The helicopter excursion was breathtaking. Highly recommended.”</p>
+      </div>
+
+      <div class="testimonial glass">
+        <img src="https://randomuser.me/api/portraits/women/21.jpg">
+        <h3>Laura Simmons</h3>
+        <div class="stars">★★★★★</div>
+        <p>“Luxury villas and beach experiences were simply magical.”</p>
+      </div>
+
+      <div class="testimonial glass">
+        <img src="https://randomuser.me/api/portraits/men/14.jpg">
+        <h3>Kevin Rodriguez</h3>
+        <div class="stars">★★★★★</div>
+        <p>“Best travel agency in Dominican Republic for luxury vacations.”</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMMENTS -->
+  <section class="reveal">
+    <div class="section-title">
+      <h2>Traveler Opinions</h2>
+      <p>Share your experience with Germa Travel.</p>
+    </div>
+
+    <div class="glass booking-form">
+
+      <div class="comment-form">
+        <input type="text" id="name" placeholder="Your Name">
+        <textarea id="commentText" placeholder="Write your review..."></textarea>
+
+        <select id="rating">
+          <option>★★★★★</option>
+          <option>★★★★☆</option>
+          <option>★★★☆☆</option>
+          <option>★★☆☆☆</option>
+          <option>★☆☆☆☆</option>
+        </select>
+
+        <button class="btn btn-primary" onclick="addComment()">Submit Review</button>
+      </div>
+
+      <div class="comments-list" id="commentsList"></div>
+
+    </div>
+  </section>
+
+  <!-- INTERNATIONAL -->
+  <section class="reveal">
+
+    <div class="section-title">
+      <h2>International Luxury Packages</h2>
+      <p>Discover premium vacations around the world.</p>
+    </div>
+
+    <div class="packages-grid">
+
+      <div class="package-card glass">
+        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1200&auto=format&fit=crop">
+        <div class="package-content">
+          <h3>Dubai</h3>
+          <p>Starting at $2,499</p>
+        </div>
+      </div>
+
+      <div class="package-card glass">
+        <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=1200&auto=format&fit=crop">
+        <div class="package-content">
+          <h3>Paris</h3>
+          <p>Starting at $2,199</p>
+        </div>
+      </div>
+
+      <div class="package-card glass">
+        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1200&auto=format&fit=crop">
+        <div class="package-content">
+          <h3>Cancun</h3>
+          <p>Starting at $1,299</p>
+        </div>
+      </div>
+
+      <div class="package-card glass">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop">
+        <div class="package-content">
+          <h3>Bahamas</h3>
+          <p>Starting at $1,799</p>
+        </div>
+      </div>
+
+      <div class="package-card glass">
+        <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?q=80&w=1200&auto=format&fit=crop">
+        <div class="package-content">
+          <h3>Jamaica</h3>
+          <p>Starting at $1,499</p>
+        </div>
+      </div>
+
+      <div class="package-card glass">
+        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=1200&auto=format&fit=crop">
+        <div class="package-content">
+          <h3>Europe Tours</h3>
+          <p>Starting at $3,999</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- BOOKING -->
+  <section id="booking" class="reveal">
+
+    <div class="section-title">
+      <h2>Book Your Dream Vacation</h2>
+      <p>Luxury travel planning made easy.</p>
+    </div>
+
+    <div class="booking-grid">
+
+      <div>
+        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop"
+             style="width:100%;border-radius:25px;">
+      </div>
+
+      <div class="booking-form glass">
+
+        <form>
+
+          <input type="text" placeholder="Full Name">
+          <input type="email" placeholder="Email">
+          <input type="tel" placeholder="Phone Number">
+
+          <select>
+            <option>Choose Destination</option>
+            <option>Punta Cana</option>
+            <option>Puerto Plata</option>
+            <option>Samaná</option>
+            <option>Dubai</option>
+            <option>Paris</option>
+          </select>
+
+          <input type="date">
+
+          <input type="number" placeholder="Number of Travelers">
+
+          <textarea placeholder="Special Requests"></textarea>
+
+          <button class="btn btn-primary">Reserve Luxury Experience</button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="reveal">
+
+    <div class="newsletter">
+      <h2>Join Our VIP Travel Newsletter</h2>
+      <p>Get exclusive offers and luxury travel inspiration directly to your inbox.</p>
+
+      <form>
+        <input type="email" placeholder="Enter your email">
+        <button>Subscribe</button>
+      </form>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <h2>Germa Travel</h2>
+    <p>“From Dreams to Reality”</p>
+
+    <div class="socials">
+
+      <a href="https://www.facebook.com/share/1Dw1XstfXB/?mibextid=wwXIfr" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+
+      <a href="#">
+        <i class="fab fa-instagram"></i>
+      </a>
+
+      <a href="https://wa.me/18495182461" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+
+      <a href="#">
+        <i class="fab fa-tiktok"></i>
+      </a>
+
+    </div>
+
+    <p>
+      Germa Travel © 2026 — Luxury Experiences & Unforgettable Adventures
+    </p>
+
+  </footer>
+
+  <!-- FLOAT BUTTONS -->
+  <a href="https://wa.me/18495182461?text=Hola%20estoy%20interesado%20en%20uno%20de%20tus%20paquetes%20de%20viaje%20puedo%20obtener%20mas%20informacion"
+     class="whatsapp" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <a href="#home" class="top-btn">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <img id="lightboxImg">
+  </div>
+
+  <script>
+
+    // MOBILE MENU
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.onclick = () => {
+      navLinks.classList.toggle('active');
+    };
+
+    // REVEAL ANIMATION
+    const reveals = document.querySelectorAll('.reveal');
+
+    function revealSections(){
+      reveals.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+          sec.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealSections);
+    revealSections();
+
+    // COUNTERS
+    const counters = document.querySelectorAll('.counter');
+
+    counters.forEach(counter => {
+      const updateCounter = () => {
+        const target = +counter.getAttribute('data-target');
+        const current = +counter.innerText;
+
+        const increment = target / 100;
+
+        if(current < target){
+          counter.innerText = Math.ceil(current + increment);
+          setTimeout(updateCounter, 20);
+        } else {
+          counter.innerText = target;
+        }
+      };
+
+      updateCounter();
+    });
+
+    // OFFERS
+    const offers = [
+      ["Punta Cana Resort", "$799"],
+      ["Saona Island Escape", "$599"],
+      ["Puerto Plata VIP", "$699"],
+      ["Las Terrenas Luxury", "$999"],
+      ["Bayahibe Paradise", "$849"],
+      ["Samaná Retreat", "$899"],
+      ["Helicopter Coastal Tour", "$1299"],
+      ["Yacht Experience", "$1499"],
+      ["Luxury Villa Weekend", "$1799"],
+      ["All Inclusive VIP", "$1999"]
+    ];
+
+    const offersGrid = document.getElementById('offersGrid');
+
+    offers.forEach((offer, index) => {
+
+      offersGrid.innerHTML += `
+        <div class="offer-card glass">
+
+          <span class="badge">-${20 + index}%</span>
+
+          <img src="https://picsum.photos/500/700?random=${index}">
+
+          <div class="offer-overlay">
+
+            <h3>${offer[0]}</h3>
+
+            <p>${offer[1]}</p>
+
+            <div class="timer" id="timer${index}"></div>
+
+            <a href="https://wa.me/18495182461" target="_blank" class="btn btn-primary">
+              Reserve Now
+            </a>
+
+          </div>
+        </div>
+      `;
+
+    });
+
+    // COUNTDOWN TIMERS
+    function startTimers(){
+
+      const endDate = new Date().getTime() + 5 * 24 * 60 * 60 * 1000;
+
+      setInterval(() => {
+
+        const now = new Date().getTime();
+        const distance = endDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        offers.forEach((_,i)=>{
+          document.getElementById(`timer${i}`).innerHTML =
+            `Offer ends in ${days}d ${hours}h ${mins}m`;
+        });
+
+      },1000);
+
+    }
+
+    startTimers();
+
+    // LIGHTBOX
+    const galleryImages = document.querySelectorAll('.gallery-item img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+
+    galleryImages.forEach(img => {
+      img.onclick = () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+      }
+    });
+
+    lightbox.onclick = () => {
+      lightbox.style.display = 'none';
+    };
+
+    // COMMENTS
+    function addComment(){
+
+      const name = document.getElementById('name').value;
+      const text = document.getElementById('commentText').value;
+      const rating = document.getElementById('rating').value;
+
+      if(name === '' || text === ''){
+        alert('Please fill all fields');
+        return;
+      }
+
+      const comment = document.createElement('div');
+      comment.classList.add('comment','glass');
+
+      comment.innerHTML = `
+        <h4>${name}</h4>
+        <div class="stars">${rating}</div>
+        <p>${text}</p>
+      `;
+
+      document.getElementById('commentsList').prepend(comment);
+
+      document.getElementById('name').value = '';
+      document.getElementById('commentText').value = '';
+    }
+
+    // PARTICLES
+    const particles = document.getElementById('particles');
+
+    for(let i=0;i<60;i++){
+
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+
+      particle.style.left = Math.random()*100 + 'vw';
+      particle.style.animationDuration = (Math.random()*10 + 5) + 's';
+      particle.style.opacity = Math.random();
+
+      particles.appendChild(particle);
+    }
+
+  </script>
+
+</body>
+</html>
